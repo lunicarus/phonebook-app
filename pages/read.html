@@ -17,7 +17,7 @@
             <tr>
                 <th class="titulo-tabela">Nome</th>
                 <th class="titulo-tabela">Telefones</th>
-                <th class="titulo-tabela-op">Opções</th>
+                <th class="titulo-tabela">Opções</th>
             </tr>
             </thead>
             <tbody>
@@ -44,7 +44,6 @@
                 row.appendChild(nameCell);
 
                 const phonesCell = document.createElement('td');
-                phonesCell.className = 'td-tel';
                 const phonesList = document.createElement('ul');
                 contact.phones.forEach(phone => {
                     const phoneItem = document.createElement('li');
