@@ -4,20 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Adicionar um telefone - Agenda Telefônica Pública">
-    <title>Adicionar um telefone</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Adicionar Telefone</title>
 </head>
 <body>
 <header>
-    <h1>Adicionar um telefone</h1>
+    <p class= "titulo">Adicionar Telefone</p>
 </header>
 <main>
     <form id="addContactForm">
-        <label for="nome">Nome:</label><input type="text" id="nome" name="nome" required>
 
-        <label for="tel">Telefone:</label>
-        <input type="tel" id="tel" name="telefone" required>
+        <div class="parte-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
 
-        <button type="submit" class="button">Adicionar</button>
+        <div class="parte-form">
+            <label for="tel">Telefone:</label>
+            <input type="tel" id="tel" name="telefone" required>
+        </div>
+
+        <button type="submit" class="add">+</button>
     </form>
 </main>
 <footer>
@@ -26,15 +33,14 @@
 
 <script>
     document.getElementById('addContactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita o comportamento padrão de envio do formulário
-
-        const formData = new FormData(this); // Obtém os dados do formulário
+        event.preventDefault();
+        const formData = new FormData(this);
         const contactData = {
             name: formData.get('nome'),
-            phones: [formData.get('telefone')] // Armazena o telefone em um array
+            phones: [formData.get('telefone')]
         };
 
-        // Envia os dados para o servidor JSON
+
         fetch('http://localhost:3000/contacts', {
             method: 'POST',
             headers: {
@@ -45,7 +51,6 @@
             .then(response => {
                 if (response.ok) {
                     alert('Contato adicionado com sucesso!');
-                    // Limpa os campos do formulário após o envio bem-sucedido
                     document.getElementById('addContactForm').reset();
                 } else {
                     alert('Erro ao adicionar contato. Por favor, tente novamente.');
@@ -56,3 +61,4 @@
 </script>
 </body>
 </html>
+
