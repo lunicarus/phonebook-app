@@ -2,6 +2,10 @@
     min-width: 70%;
 }
 
+.imagem{
+    width: 30%;
+}
+
 .td-tel{
         display: flex;
         align-items: end;
