@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Consultar Contatos - Agenda Telefônica Pública">
+    <link rel="stylesheet" href="styles.css">
     <title>Consultar telefones</title>
 </head>
 <body>
@@ -28,9 +29,9 @@
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function (body) {
         fetch('http://localhost:3000/contacts') // URL do JSON server
-            .then(response => response.json())
+            .then(response => response.json(body))
             .then(data => {
                 const tableBody = document.querySelector('#contactsTable tbody');
                 tableBody.innerHTML = '';
@@ -46,84 +47,23 @@
                     const phonesList = document.createElement('ul');
                     contact.phones.forEach(phone => {
                         const phoneItem = document.createElement('li');
-                        phoneItem.textContent = phone.toString();
+                        phoneItem.textContent = phone;
                         phonesList.appendChild(phoneItem);
                     });
                     phonesCell.appendChild(phonesList);
                     row.appendChild(phonesCell);
 
                     const actionsCell = document.createElement('td');
+                    const editButton = document.createElement('a');
+                    editButton.href = `edit.html?id=${contact.id}`;
+                    editButton.className = 'button';
+                    editButton.textContent = 'Alterar';
+                    actionsCell.appendChild(editButton);
 
-                    // Edit form
-                    const editForm = document.createElement('form');
-                    editForm.className = 'editForm';
-
-                    const editNameInput = document.createElement('input');
-                    editNameInput.type = 'text';
-                    editNameInput.value = contact.name;
-                    editNameInput.name = 'nome';
-                    editForm.appendChild(editNameInput);
-
-                    const editPhoneInput = document.createElement('input');
-                    editPhoneInput.type = 'tel';
-                    editPhoneInput.value = contact.phones[0];
-                    editPhoneInput.name = 'telefone';
-                    editForm.appendChild(editPhoneInput);
-
-                    const saveButton = document.createElement('button');
-                    saveButton.type = 'submit';
-                    saveButton.className = 'button';
-                    saveButton.textContent = 'Salvar';
-                    editForm.appendChild(saveButton);
-
-                    editForm.addEventListener('submit', function(event) {
-                        event.preventDefault();
-                        const formData = new FormData(this);
-                        const updatedContact = {
-                            name: formData.get('nome'),
-                            phones: [formData.get('telefone')]
-                        };
-
-                        fetch(`http://localhost:3000/contacts/${contact.id}`, {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(updatedContact)
-                        })
-                            .then(response => {
-                                if (response.ok) {
-                                    alert('Contato atualizado com sucesso!');
-                                    window.location.reload();
-                                } else {
-                                    alert('Erro ao atualizar contato. Por favor, tente novamente.');
-                                }
-                            })
-                            .catch(error => console.error('Erro: ', error));
-                    });
-
-                    actionsCell.appendChild(editForm);
-
-                    // Delete button
-                    const deleteButton = document.createElement('button');
+                    const deleteButton = document.createElement('a');
+                    deleteButton.href = `delete.html?id=${contact.id}`;
                     deleteButton.className = 'button delete';
                     deleteButton.textContent = 'Excluir';
-                    deleteButton.addEventListener('click', function() {
-                        if (confirm('Tem certeza de que deseja excluir este contato?')) {
-                            fetch(`http://localhost:3000/contacts/${contact.id}`, {
-                                method: 'DELETE'
-                            })
-                                .then(response => {
-                                    if (response.ok) {
-                                        alert('Contato excluído com sucesso!');
-                                        window.location.reload();
-                                    } else {
-                                        alert('Erro ao excluir contato. Por favor, tente novamente.');
-                                    }
-                                })
-                                .catch(error => console.error('Erro: ', error));
-                        }
-                    });
                     actionsCell.appendChild(deleteButton);
 
                     row.appendChild(actionsCell);

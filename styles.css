@@ -1,0 +1,103 @@
+
+.container{
+    max-width: 1280px;
+}
+
+.titulo{
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    margin-top: 50px;
+    font-size: smaller;
+    text-align: center;
+}
+
+.container-img-botoes{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container-botoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 50px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: darkgray;
+}
+
+form{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.parte-form{
+    margin: 10px;
+}
+
+.add{
+    margin: 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.button.delete {
+    background-color: #dc3545;
+}
+
+.button.delete:hover {
+    background-color: #c82333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
