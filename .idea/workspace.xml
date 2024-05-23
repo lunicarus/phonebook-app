@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="fix: files for deploy" />
+    <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="fix: files for deploy">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/create.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/read.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/read.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/read.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
