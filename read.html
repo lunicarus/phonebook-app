@@ -7,8 +7,9 @@
     <title>Consultar telefones</title>
 </head>
 <body>
+<div class="container">
 <header>
-    <h1>Consultar telefones</h1>
+    <p class= "titulo">Consultar telefones</p>
 </header>
 <main>
     <table id="contactsTable">
@@ -16,7 +17,7 @@
         <tr>
             <th>Nome</th>
             <th>Telefones</th>
-            <th>Opções</th>
+            <th class="oculto">Opções</th>
         </tr>
         </thead>
         <tbody>
@@ -135,5 +136,6 @@
             .catch(error => console.error('Erro', error));
     });
 </script>
+</div>
 </body>
 </html>

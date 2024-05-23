@@ -64,6 +64,10 @@ form{
     margin: 10px;
 }
 
+.oculto{
+    display: none;
+}
+
 .add{
     margin: 10px;
     border-radius: 50%;
@@ -88,7 +92,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid gray;
     padding: 8px;
     text-align: left;
 }
