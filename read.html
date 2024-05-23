@@ -8,113 +8,84 @@
 </head>
 <body>
 <div class="container">
-<header>
-    <p class= "titulo">Consultar telefones</p>
-</header>
-<main>
-    <table id="contactsTable">
-        <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Telefones</th>
-            <th class="oculto">Opções</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Linhas que serão preenchidas dinamicamente -->
-        </tbody>
-    </table>
-</main>
-<footer>
-    <p>Feito por Bárbara Branco e Lucas Cruz</p>
-</footer>
+    <header>
+        <p class="titulo">Consultar telefones</p>
+    </header>
+    <main>
+        <table id="contactsTable">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefones</th>
+                <th class="oculto">Opções</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Linhas que serão preenchidas dinamicamente -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Feito por Bárbara Branco e Lucas Cruz</p>
+    </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('http://localhost:3000/contacts') // URL do JSON server
-            .then(response => response.json())
-            .then(data => {
-                const tableBody = document.querySelector('#contactsTable tbody');
-                tableBody.innerHTML = '';
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:3000/contacts') // URL do JSON server
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#contactsTable tbody');
+                    tableBody.innerHTML = '';
 
-                data.forEach(contact => {
-                    const row = document.createElement('tr');
+                    data.forEach(contact => {
+                        const row = document.createElement('tr');
 
-                    const nameCell = document.createElement('td');
-                    nameCell.textContent = contact.name;
-                    row.appendChild(nameCell);
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = contact.name;
+                        row.appendChild(nameCell);
 
-                    const phonesCell = document.createElement('td');
-                    const phonesList = document.createElement('ul');
-                    contact.phones.forEach(phone => {
-                        const phoneItem = document.createElement('li');
-                        phoneItem.textContent = phone.toString();
-                        phonesList.appendChild(phoneItem);
-                    });
-                    phonesCell.appendChild(phonesList);
-                    row.appendChild(phonesCell);
+                        const phonesCell = document.createElement('td');
+                        const phonesList = document.createElement('ul');
+                        contact.phones.forEach(phone => {
+                            const phoneItem = document.createElement('li');
+                            phoneItem.textContent = phone;
+                            phonesList.appendChild(phoneItem);
+                        });
+                        phonesCell.appendChild(phonesList);
+                        row.appendChild(phonesCell);
 
-                    const actionsCell = document.createElement('td');
+                        const actionsCell = document.createElement('td');
+                        actionsCell.className= "sem-borda"
 
-                    // Edit form
-                    const editForm = document.createElement('form');
-                    editForm.className = 'editForm';
+                        const actionsContainer = document.createElement('div');
+                        actionsContainer.className = 'actions-container';
 
-                    const editNameInput = document.createElement('input');
-                    editNameInput.type = 'text';
-                    editNameInput.value = contact.name;
-                    editNameInput.name = 'nome';
-                    editForm.appendChild(editNameInput);
+                        const editButton = document.createElement('img');
+                        editButton.src = 'botao-editar.png';
+                        editButton.alt = 'Editar';
+                        editButton.className = 'button-read';
+                        editButton.addEventListener('click', function() {
+                            if (editButton.getAttribute('data-editing') !== 'true') {
+                                makeEditable(row, contact);
+                                editButton.setAttribute('data-editing', 'true');
+                                editButton.src = 'botao-salvar.png';
+                            } else {
+                                saveEdits(row, contact.id, editButton);
+                                editButton.setAttribute('data-editing', 'false');
+                                editButton.src = 'botao-editar.png';
+                            }
+                        });
+                        actionsContainer.appendChild(editButton);
 
-                    const editPhoneInput = document.createElement('input');
-                    editPhoneInput.type = 'tel';
-                    editPhoneInput.value = contact.phones[0];
-                    editPhoneInput.name = 'telefone';
-                    editForm.appendChild(editPhoneInput);
-
-                    const saveButton = document.createElement('button');
-                    saveButton.type = 'submit';
-                    saveButton.className = 'button';
-                    saveButton.textContent = 'Salvar';
-                    editForm.appendChild(saveButton);
-
-                    editForm.addEventListener('submit', function(event) {
-                        event.preventDefault();
-                        const formData = new FormData(this);
-                        const updatedContact = {
-                            name: formData.get('nome'),
-                            phones: [formData.get('telefone')]
-                        };
-
-                        fetch(`http://localhost:3000/contacts/${contact.id}`, {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(updatedContact)
-                        })
-                            .then(response => {
-                                if (response.ok) {
-                                    alert('Contato atualizado com sucesso!');
-                                    window.location.reload();
-                                } else {
-                                    alert('Erro ao atualizar contato. Por favor, tente novamente.');
-                                }
-                            })
-                            .catch(error => console.error('Erro: ', error));
-                    });
-
-                    actionsCell.appendChild(editForm);
-
-                    // Delete button
-                    const deleteButton = document.createElement('button');
-                    deleteButton.className = 'button delete';
-                    deleteButton.textContent = 'Excluir';
-                    deleteButton.addEventListener('click', function() {
-                        if (confirm('Tem certeza de que deseja excluir este contato?')) {
-                            fetch(`http://localhost:3000/contacts/${contact.id}`, {
-                                method: 'DELETE'
-                            })
+                        const deleteButton = document.createElement('img');
+                        deleteButton.src = 'botao-excluir.png';
+                        deleteButton.alt = 'Excluir';
+                        deleteButton.className = 'button-read';
+                        deleteButton.addEventListener('click', function() {
+                            if (confirm('Tem certeza de que deseja excluir este contato?')) {
+                                fetch(`http://localhost:3000/contacts/${contact.id}`, {
+                                    method: 'DELETE'
+                                })
                                 .then(response => {
                                     if (response.ok) {
                                         alert('Contato excluído com sucesso!');
@@ -124,18 +95,64 @@
                                     }
                                 })
                                 .catch(error => console.error('Erro: ', error));
-                        }
+                            }
+                        });
+                        actionsContainer.appendChild(deleteButton);
+
+                        actionsCell.appendChild(actionsContainer);
+                        row.appendChild(actionsCell);
+                        tableBody.appendChild(row);
                     });
-                    actionsCell.appendChild(deleteButton);
+                })
+                .catch(error => console.error('Erro', error));
+        });
 
-                    row.appendChild(actionsCell);
+        function makeEditable(row, contact) {
+            const nameCell = row.children[0];
+            const phonesCell = row.children[1];
 
-                    tableBody.appendChild(row);
-                });
+            const nameInput = document.createElement('input');
+            nameInput.type = 'text';
+            nameInput.value = contact.name;
+            nameCell.innerHTML = '';
+            nameCell.appendChild(nameInput);
+
+            phonesCell.innerHTML = '';
+            contact.phones.forEach(phone => {
+                const phoneInput = document.createElement('input');
+                phoneInput.type = 'tel';
+                phoneInput.value = phone;
+                phonesCell.appendChild(phoneInput);
+            });
+        }
+
+        function saveEdits(row, contactId, editButton) {
+            const nameInput = row.children[0].querySelector('input');
+            const phoneInputs = Array.from(row.children[1].querySelectorAll('input'));
+
+            const updatedContact = {
+                name: nameInput.value,
+                phones: phoneInputs.map(input => input.value)
+            };
+
+            fetch(`http://localhost:3000/contacts/${contactId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedContact)
             })
-            .catch(error => console.error('Erro', error));
-    });
-</script>
+            .then(response => {
+                if (response.ok) {
+                    alert('Contato atualizado com sucesso!');
+                    window.location.reload();
+                } else {
+                    alert('Erro ao atualizar contato. Por favor, tente novamente.');
+                }
+            })
+            .catch(error => console.error('Erro: ', error));
+        }
+    </script>
 </div>
 </body>
 </html>

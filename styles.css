@@ -1,9 +1,4 @@
-
-.container{
-    max-width: 1280px;
-}
-
-.titulo{
+.titulo {
     font-size: xx-large;
     text-align: center;
     margin-top: 50px;
@@ -16,20 +11,20 @@ body {
     align-items: center;
 }
 
-footer{
+footer {
     margin-top: 50px;
     font-size: smaller;
     text-align: center;
 }
 
-.container-img-botoes{
+.container-img-botoes {
     display: flex;
     flex-direction: row;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.container-botoes{
+.container-botoes {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -39,7 +34,7 @@ footer{
 .button {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: medium;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -54,21 +49,21 @@ footer{
     background-color: darkgray;
 }
 
-form{
+form {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
 }
 
-.parte-form{
+.parte-form {
     margin: 10px;
 }
 
-.oculto{
+.oculto {
     display: none;
 }
 
-.add{
+.add {
     margin: 10px;
     border-radius: 50%;
     color: white;
@@ -79,6 +74,20 @@ form{
 
 .button.delete {
     background-color: #dc3545;
+}
+
+.button-read{
+    display: flex;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: white;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
 }
 
 .button.delete:hover {
@@ -104,4 +113,27 @@ th {
 ul {
     list-style-type: none;
     padding: 0;
+}
+
+.actions-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.sem-borda{
+    border: none;
+}
+
+/* Media Queries */
+@media(max-width: 480px) {
+    .imagem {
+        margin-bottom: 10px;
+    }
+    .container-img-botoes {
+        flex-direction: column;
+        background-color: green;
+    }
+    .button {
+        margin: 10px;
+    }
 }
