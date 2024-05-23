@@ -12,47 +12,25 @@
 </header>
 <main>
     <form id="addContactForm" class="addContactForm">
-
         <div class="parte-form">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
         </div>
-
         <div class="parte-form">
             <label for="tel">Telefone:</label>
             <input type="tel" id="tel" name="telefone" required>
         </div>
-
         <div class="actions-container-create">
-            <button type="submit" class="button-create">
-                <img src="../media/botao-salvar.png" alt="adicionar" class="img-button-create">
-            </button>
+            <button type="submit" class="button-create">Adicionar</button>
         </div>
-
     </form>
 </main>
 <footer>
     <p>Feito por Bárbara Branco e Lucas Cruz</p>
 </footer>
-
-<script>
-    document.getElementById('addContactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        const contactData = {
-            id: Date.now().toString(),
-            name: formData.get('nome'),
-            phones: [formData.get('telefone')]
-        };
-
-        const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
-        contacts.push(contactData);
-        localStorage.setItem('contacts', JSON.stringify(contacts));
-
-        alert('Contato adicionado com sucesso!');
-        document.getElementById('addContactForm').reset();
-    });
-</script>
+<script src="../js/utils.js"></script>
+<script src="../js/create.js"></script>
 </body>
 </html>
+
 
