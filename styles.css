@@ -118,15 +118,16 @@ ul {
 
 
 /* Media Queries */
-@media(max-width: 480px) {
-    .imagem {
-        margin-bottom: 10px;
-    }
-    .container-img-botoes {
+ @media(max-width: 1024px){
+    .container-img-botoes{
         flex-direction: column;
-        background-color: green;
+        align-items: center;
     }
-    .button {
-        margin: 10px;
+    .container-botoes {
+        padding-top: 50px;
+        flex-direction: row;
+        margin: auto;
     }
-}
+ }
+
+
