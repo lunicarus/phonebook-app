@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         row.appendChild(nameCell);
 
         const phonesCell = document.createElement('td');
-        const phonesList = document.createElement('ul');
+
         contact.phones.forEach(phone => {
-            const phoneItem = document.createElement('li');
+
             phoneItem.textContent = formatDisplayPhoneNumber(phone);
             phonesList.appendChild(phoneItem);
         });
