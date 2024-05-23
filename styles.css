@@ -1,3 +1,13 @@
+.container{
+    min-width: 70%;
+}
+
+.td-tel{
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+}
+
 .titulo {
     font-size: xx-large;
     text-align: center;
@@ -22,6 +32,7 @@ footer {
     flex-direction: row;
     margin-top: 50px;
     margin-bottom: 50px;
+    justify-content: center;
 }
 
 .container-botoes {
@@ -111,9 +122,8 @@ ul {
 .actions-container {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: center
 }
-
 
 /* Media Queries */
  @media(max-width: 1024px){
