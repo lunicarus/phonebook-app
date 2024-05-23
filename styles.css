@@ -59,10 +59,6 @@ form {
     margin: 10px;
 }
 
-.oculto {
-    display: none;
-}
-
 .add {
     margin: 10px;
     border-radius: 50%;
@@ -70,10 +66,6 @@ form {
     background-color: black;
     border: none;
     cursor: pointer;
-}
-
-.button.delete {
-    background-color: #dc3545;
 }
 
 .button-read{
@@ -90,8 +82,8 @@ form {
     margin: 2px;
 }
 
-.button.delete:hover {
-    background-color: #c82333;
+.button-read:hover {
+    background-color: gray;
 }
 
 table {
@@ -101,6 +93,7 @@ table {
 }
 
 th, td {
+    min-width: 100px;
     border: 1px solid gray;
     padding: 8px;
     text-align: left;
@@ -108,6 +101,8 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+    text-align: center;
+
 }
 
 ul {
@@ -117,12 +112,10 @@ ul {
 
 .actions-container {
     display: flex;
-    gap: 10px; /* Espaçamento entre os botões */
+    gap: 10px;
+    justify-content: center;
 }
 
-.sem-borda{
-    border: none;
-}
 
 /* Media Queries */
 @media(max-width: 480px) {
