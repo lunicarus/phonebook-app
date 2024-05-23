@@ -95,6 +95,26 @@ footer {
     background-color: gray;
 }
 
+.button-create {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-create:hover {
+    background-color: gray;
+}
+
+.img-button-create {
+    width: 20px;
+    height: 20px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -142,9 +162,5 @@ ul {
             align-items: end;
     }
 
-    .img-button-create{
-        margin-left: 20px;
-        margin-top: -37px;
-    }
  }
 

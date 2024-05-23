@@ -1,4 +1,3 @@
-<!-- create.html and index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,10 +8,10 @@
 </head>
 <body>
 <header>
-    <p class= "titulo">Adicionar Telefone</p>
+    <p class="titulo">Adicionar Telefone</p>
 </header>
 <main>
-    <form class="addContactForm">
+    <form id="addContactForm" class="addContactForm">
 
         <div class="parte-form">
             <label for="nome">Nome:</label>
@@ -24,10 +23,10 @@
             <input type="tel" id="tel" name="telefone" required>
         </div>
 
-        <div class="actions-container">
-        <button type="submit" class="button-read">
-            <img src="botao-adicionar.png" alt="adicionar" class="img-button-create">
-        </button>
+        <div class="actions-container-create">
+            <button type="submit" class="button-create">
+                <img src="botao-salvar.png" alt="adicionar" class="img-button-create">
+            </button>
         </div>
 
     </form>
@@ -44,7 +43,6 @@
             name: formData.get('nome'),
             phones: [formData.get('telefone')]
         };
-
 
         fetch('http://localhost:3000/contacts', {
             method: 'POST',
