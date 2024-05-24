@@ -95,11 +95,11 @@ function saveEdits(row, contactId, editButton) {
 
     const updatedPhones = phoneInputs.map(input => input.value.trim());
     for (let phone of updatedPhones) {
-        if (!validatePhone(phone)) {
+        if (!validatePhone(phone) || isPhoneDuplicate(phone)) {
             alert('Número de telefone inválido. Por favor, insira um número válido no formato correto.');
             return;
         }
-        phone = phone.replace(/\D/g, ''); // Remove non-digit characters
+        phone = phone.replace(/\D/g, '');
     }
 
     const contacts = JSON.parse(localStorage.getItem('contacts')) || [];

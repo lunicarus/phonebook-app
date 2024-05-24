@@ -13,7 +13,7 @@ document.getElementById('addContactForm').addEventListener('submit', function(ev
         return;
     }
 
-    const formattedPhone = phoneInput.replace(/\D/g, ''); // Remove non-digit characters
+    const formattedPhone = phoneInput.replace(/\D/g, '');
     if (isPhoneDuplicate(formattedPhone)) {
         alert('Número de telefone já existe. Por favor, insira um número de telefone único.');
         return;
@@ -22,7 +22,7 @@ document.getElementById('addContactForm').addEventListener('submit', function(ev
     const contactData = {
         id: Date.now().toString(),
         name: nameInput,
-        phones: [formattedPhone]
+        phones: [savePhoneToDatabase(formattedPhone)]
     };
 
     const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
