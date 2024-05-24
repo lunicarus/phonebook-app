@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         row.appendChild(nameCell);
 
         const phonesCell = document.createElement('td');
-
+        const phonesList = document.createElement('ul');
         contact.phones.forEach(phone => {
-
+            const phoneItem = document.createElement('li');
             phoneItem.textContent = formatDisplayPhoneNumber(phone);
             phonesList.appendChild(phoneItem);
         });
@@ -83,7 +83,7 @@ function makeEditable(row, contact) {
     });
 }
 
-function saveEdits(row, contactId) {
+function saveEdits(row, contactId, editButton) {
     const nameInput = row.children[0].querySelector('input');
     const phoneInputs = Array.from(row.children[1].querySelectorAll('input'));
 
