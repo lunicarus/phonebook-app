@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="config: ignore localStorage from git">
-      <change afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/DriverSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/teste/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/src/test/java/teste/pages/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/BaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
