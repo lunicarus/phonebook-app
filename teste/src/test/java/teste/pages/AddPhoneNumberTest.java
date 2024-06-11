@@ -37,8 +37,28 @@ public class AddPhoneNumberTest extends BaseTest {
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
         submitButton.click();
 
-        // Verificação do alerta com o texto correto
+
         acceptAlert("Contato adicionado com sucesso!");
+    }
+
+    @Test
+    public void shouldNotAddContactIfNameHasSpecialCharsOrNumbers() {
+        navigateToAddPhonePage();
+
+        // Adicionar espera explícita para garantir que os elementos estejam presentes
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
+        WebElement phoneField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("tel")));
+
+        // Usar um nome com caracteres especiais e números
+        nameField.sendKeys("John Doe 123 @#");
+        phoneField.sendKeys(faker.phoneNumber().cellPhone());
+
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
+        submitButton.click();
+
+        // Verificação do alerta com o texto correto
+        acceptAlert("Nome inválido. Por favor, insira um nome válido sem números ou caracteres especiais.");
     }
 
 

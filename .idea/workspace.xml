@@ -7,9 +7,7 @@
     <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="config: ignore localStorage from git">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste/src/test/java/teste/pages/AddPhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/AddPhoneNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/src/test/java/teste/pages/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/src/test/java/teste/pages/DriverSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/DriverSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/teste/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/target/test-classes/teste/pages/AddPhoneNumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/teste/target/test-classes/teste/pages/AddPhoneNumberTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
