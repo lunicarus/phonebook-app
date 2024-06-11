@@ -13,21 +13,21 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 
-
 public class BaseTest {
     protected WebDriver driver;
-    protected  WebDriver wait;
     protected Faker faker;
+
     @BeforeEach
-    public void setup(){
+    public void setUp() {
         driver = DriverSetup.getDriver();
         faker = new Faker();
     }
 
     @After
-    public void tearDown(){
-        if(driver != null) driver.quit();
+    public void tearDown() {
+        if (driver != null) driver.quit();
     }
+
     protected void acceptAlert(String expectedAlertText) {
         try {
             Alert alert = driver.switchTo().alert();
@@ -39,12 +39,11 @@ public class BaseTest {
         }
     }
 
-    protected  void awaitForElementToLoad(WebDriver driver, By locator){
+    protected void awaitForElementToLoad(By locator) {
         new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(700))
                 .until(ExpectedConditions.elementToBeClickable(locator))
                 .click();
     }
-
 }
