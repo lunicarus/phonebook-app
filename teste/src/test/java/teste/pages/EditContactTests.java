@@ -106,5 +106,31 @@ class EditContactTests extends BaseTest {
         acceptAlert("Nome inválido. Por favor, insira um nome válido sem números ou caracteres especiais.");
     }
 
+
+    @Test
+    @DisplayName("Should show error for duplicate phone on edit")
+    public void shouldShowErrorForDuplicatePhoneOnEdit() {
+        landingPage.open();
+        landingPage.clickAddButton();
+        addContactPage.enterName(faker.leagueOfLegends().champion());
+        addContactPage.enterPhone(faker.phoneNumber().cellPhone());
+        addContactPage.clickCreate();
+        acceptAlert("Contato adicionado com sucesso!");
+        landingPage.open();
+        landingPage.clickAddButton();
+        addContactPage.enterName(faker.leagueOfLegends().champion());
+        addContactPage.enterPhone("(16) 99999-9999");
+        addContactPage.clickCreate();
+        acceptAlert("Contato adicionado com sucesso!");
+        landingPage.open();
+        landingPage.clickConsultButton();
+        consultContactPage.clickFirstReadButton();
+        WebElement phoneNumberInput = consultContactPage.getFirstContactPhoneInput();
+        phoneNumberInput.click();
+        phoneNumberInput.clear();
+        phoneNumberInput.sendKeys("(16) 99999-9999");
+        consultContactPage.clickFirstReadButton();
+        acceptAlert("Número de telefone inválido. Por favor, insira um número válido no formato correto.");
+    }
 }
 
