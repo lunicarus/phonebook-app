@@ -30,4 +30,8 @@ public class ConsultContactPage {
     public WebElement getFirstContactPhoneInput() {
         return driver.findElement(By.cssSelector("td:nth-child(2) > input"));
     }
+
+    public WebElement getFirstContactNameInput() {
+        return driver.findElement(By.cssSelector("td:nth-child(1) > input"));
+    }
 }
