@@ -162,6 +162,33 @@ public class AddPhoneNumberTest extends BaseTest {
         }
     }
 
+    @Test
+    public void shouldAcceptNameWithAccentsOrTilde() throws InterruptedException {
+        navigateToAddPhonePage();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
+        WebElement phoneField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("tel")));
+
+        Thread.sleep(500);
+
+        String nameWithAccents = "José da Silva São";
+
+        nameField.sendKeys(nameWithAccents);
+        phoneField.sendKeys(faker.phoneNumber().cellPhone());
+
+        Thread.sleep(500);
+
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
+        submitButton.click();
+
+        Thread.sleep(500);
+
+        // Verificar se o alerta de sucesso é exibido
+        acceptAlert("Contato adicionado com sucesso!");
+
+        Thread.sleep(500);
+    }
 
 
 
