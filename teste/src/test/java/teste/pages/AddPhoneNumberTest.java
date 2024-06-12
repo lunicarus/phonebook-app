@@ -124,6 +124,27 @@ public class AddPhoneNumberTest extends BaseTest {
     }
 
     @Test
+    public void shouldShowErrorForEmptyPhone() {
+        navigateToAddPhonePage();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
+        WebElement phoneField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("tel")));
+
+        Thread.sleep(1000);
+
+        String validName = faker.name().fullName();
+
+        nameField.sendKeys(validName);
+        phoneField.sendKeys("");
+
+        Thread.sleep(500);
+
+        acceptAlert("Número de telefone inválido. Por favor, insira um número válido no formato correto. ")
+    }
+
+
+    @Test
     public void shouldShowErrorForEmptyName() throws InterruptedException {
         navigateToAddPhonePage();
 
