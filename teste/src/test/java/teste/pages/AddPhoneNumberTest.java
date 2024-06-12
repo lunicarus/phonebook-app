@@ -32,21 +32,21 @@ public class AddPhoneNumberTest extends BaseTest {
         WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
         WebElement phoneField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("tel")));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
 
         nameField.sendKeys("Vinicius Martins");
         phoneField.sendKeys(faker.phoneNumber().cellPhone());
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
 
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
         submitButton.click();
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
 
         acceptAlert("Contato adicionado com sucesso!");
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
     }
 
     @Test
@@ -86,7 +86,6 @@ public class AddPhoneNumberTest extends BaseTest {
 
         String validPhoneNumber = faker.phoneNumber().cellPhone();
 
-        // Adicionar um contato válido
         nameField.sendKeys("Valid Name");
         phoneField.sendKeys(validPhoneNumber);
 
@@ -189,6 +188,43 @@ public class AddPhoneNumberTest extends BaseTest {
 
         Thread.sleep(500);
     }
+
+    @Test
+    public void shouldAcceptNamesWithAbbreviations() throws InterruptedException {
+        navigateToAddPhonePage();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement nameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("nome")));
+        WebElement phoneField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("tel")));
+
+        Thread.sleep(1000);
+
+        // Usar um nome abreviado para testar a validação
+        String[] abbreviatedNames = {"Vini Jr.", "Ana Sr."};
+        for (String abbreviatedName : abbreviatedNames) {
+            nameField.clear();
+            phoneField.clear();
+
+            nameField.sendKeys(abbreviatedName);
+            phoneField.sendKeys(faker.phoneNumber().cellPhone());
+
+            Thread.sleep(1000);
+
+            WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
+            submitButton.click();
+
+            Thread.sleep(1000);
+
+            acceptAlert("Contato adicionado com sucesso!");
+
+            Thread.sleep(1000);
+
+            // Navegar de volta para a página de adição para testar o próximo nome
+            navigateToAddPhonePage();
+        }
+    }
+
+
 
 
 

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="config: ignore localStorage from git" />
+    <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="config: ignore localStorage from git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/src/test/java/teste/pages/AddPhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/AddPhoneNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/target/test-classes/teste/pages/AddPhoneNumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/teste/target/test-classes/teste/pages/AddPhoneNumberTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +73,7 @@
     "Application.Main.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "JUnit.AddPhoneNumberTest.executor": "Run",
-    "JUnit.AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid.executor": "Debug",
+    "JUnit.AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid.executor": "Run",
     "JavaScript Debug.create.html.executor": "Debug",
     "JavaScript Debug.index.html.executor": "Run",
     "Node.js.read.js.executor": "Debug",
@@ -107,6 +111,46 @@
       <recent name="C:\Users\Ampsoft\phonebook-app" />
       <recent name="C:\Users\Ampsoft\phonebook-app\public" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AddPhoneNumberTest.shouldAcceptNamesWithAbbreviations">
+    <configuration name="AddPhoneNumberTest.shouldAcceptNamesWithAbbreviations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teste" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teste.pages" />
+      <option name="MAIN_CLASS_NAME" value="teste.pages.AddPhoneNumberTest" />
+      <option name="METHOD_NAME" value="shouldAcceptNamesWithAbbreviations" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teste" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teste.pages" />
+      <option name="MAIN_CLASS_NAME" value="teste.pages.AddPhoneNumberTest" />
+      <option name="METHOD_NAME" value="shouldAddContactIfPhoneNumberAndNameAreValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AddPhoneNumberTest.shouldAcceptNamesWithAbbreviations" />
+        <item itemvalue="JUnit.AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$PROJECT_DIR$/../.cargo/bin" />
