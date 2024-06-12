@@ -20,4 +20,10 @@ public class ConsultContactPage {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("tr:nth-child(1) .button-read:nth-child(1)")));
         button.click();
     }
+
+    public void clickFirstDeleteButton() {
+        final WebElement button = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("tr:nth-child(1) .button-read:nth-child(2)")));
+        button.click();
+    }
 }
