@@ -8,7 +8,6 @@ import pages.AddContactPage;
 import pages.ConsultContactPage;
 import pages.LandingPage;
 
-
 class EditContactTests extends BaseTest {
     private LandingPage landingPage;
     private ConsultContactPage consultContactPage;
@@ -105,7 +104,6 @@ class EditContactTests extends BaseTest {
         consultContactPage.clickFirstReadButton();
         acceptAlert("Nome inválido. Por favor, insira um nome válido sem números ou caracteres especiais.");
     }
-
 
     @Test
     @DisplayName("Should show error for duplicate phone on edit")
