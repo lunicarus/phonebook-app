@@ -137,7 +137,7 @@ public class AddPhoneNumberTest extends BaseTest {
 
     @Test
     @DisplayName("Should show error for empty phone")
-    public void shouldShowErrorForEmptyPhone() {
+    public void shouldShowErrorForEmptyPhone() throws InterruptedException{
         navigateToAddPhonePage();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -153,7 +153,7 @@ public class AddPhoneNumberTest extends BaseTest {
 
         Thread.sleep(500);
 
-        acceptAlert("Número de telefone inválido. Por favor, insira um número válido no formato correto. ")
+        acceptAlert("Número de telefone inválido. Por favor, insira um número válido no formato correto.");
     }
 
 
@@ -171,7 +171,7 @@ public class AddPhoneNumberTest extends BaseTest {
 
         Thread.sleep(500);
 
-        WebElement su   bmitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
         submitButton.click();
 
         Thread.sleep(500);
