@@ -86,5 +86,25 @@ class EditContactTests extends BaseTest {
         acceptAlert("Contato atualizado com sucesso!");
     }
 
+    @Test
+    @DisplayName("Should show error for invalid name on edit")
+    public void shouldShowErrorForInvalidNameOnEdit() {
+        landingPage.open();
+        landingPage.clickAddButton();
+        addContactPage.enterName(faker.leagueOfLegends().champion());
+        addContactPage.enterPhone(faker.phoneNumber().cellPhone());
+        addContactPage.clickCreate();
+        acceptAlert("Contato adicionado com sucesso!");
+        landingPage.open();
+        landingPage.clickConsultButton();
+        consultContactPage.clickFirstReadButton();
+        WebElement nameInput = consultContactPage.getFirstContactNameInput();
+        nameInput.click();
+        nameInput.clear();
+        nameInput.sendKeys("a");
+        consultContactPage.clickFirstReadButton();
+        acceptAlert("Nome inválido. Por favor, insira um nome válido sem números ou caracteres especiais.");
+    }
+
 }
 
