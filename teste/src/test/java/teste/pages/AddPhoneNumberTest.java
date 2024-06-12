@@ -24,7 +24,17 @@ public class AddPhoneNumberTest extends BaseTest {
         Thread.sleep(500);
     }
 
+    private boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
     @Test
+    @DisplayName("Should add contact if phone number and name are valid")
     public void shouldAddContactIfPhoneNumberAndNameAreValid() throws InterruptedException {
         navigateToAddPhonePage();
 
@@ -50,6 +60,7 @@ public class AddPhoneNumberTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Should not add contact if name has special chars or numbers")
     public void shouldNotAddContactIfNameHasSpecialCharsOrNumbers() throws InterruptedException {
         navigateToAddPhonePage();
 
@@ -75,6 +86,7 @@ public class AddPhoneNumberTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Should show error for duplicate phone")
     public void shouldShowErrorForDuplicatePhone() throws InterruptedException {
         navigateToAddPhonePage();
 
@@ -124,6 +136,7 @@ public class AddPhoneNumberTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Should show error for empty phone")
     public void shouldShowErrorForEmptyPhone() {
         navigateToAddPhonePage();
 
@@ -145,6 +158,7 @@ public class AddPhoneNumberTest extends BaseTest {
 
 
     @Test
+    @DisplayName("Should show error for empty name")
     public void shouldShowErrorForEmptyName() throws InterruptedException {
         navigateToAddPhonePage();
 
@@ -157,7 +171,7 @@ public class AddPhoneNumberTest extends BaseTest {
 
         Thread.sleep(500);
 
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
+        WebElement su   bmitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button-create")));
         submitButton.click();
 
         Thread.sleep(500);
@@ -173,16 +187,8 @@ public class AddPhoneNumberTest extends BaseTest {
         Thread.sleep(500);
     }
 
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
     @Test
+    @DisplayName("Should accept name with accents or tilde")
     public void shouldAcceptNameWithAccentsOrTilde() throws InterruptedException {
         navigateToAddPhonePage();
 
@@ -211,6 +217,7 @@ public class AddPhoneNumberTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Should accept names with abbreviations")
     public void shouldAcceptNamesWithAbbreviations() throws InterruptedException {
         navigateToAddPhonePage();
 
