@@ -26,4 +26,8 @@ public class ConsultContactPage {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("tr:nth-child(1) .button-read:nth-child(2)")));
         button.click();
     }
+
+    public WebElement getFirstContactPhoneInput() {
+        return driver.findElement(By.cssSelector("td:nth-child(2) > input"));
+    }
 }
