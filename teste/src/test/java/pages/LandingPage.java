@@ -14,7 +14,7 @@ public class LandingPage {
         this.driver = driver;
     }
     public void open() {
-        driver.get("http://localhost/phonebook/");
+        driver.get("https://phonebook-app-cyan.vercel.app/");
         driver.manage().window().maximize();
     }
 
