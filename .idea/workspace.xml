@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="56530182-5115-4826-aeac-632b7e65bcde" name="Changes" comment="config: ignore localStorage from git">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/read.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/read.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/src/test/java/teste/pages/AddPhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/teste/src/test/java/teste/pages/AddPhoneNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/target/test-classes/teste/pages/AddPhoneNumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/teste/target/test-classes/teste/pages/AddPhoneNumberTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,7 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,14 +59,21 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2gqegy8Ox2MlivZEr9rA5KNGcEW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.AddPhoneNumberTest.executor": "Run",
+    "JUnit.AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid.executor": "Run",
     "JavaScript Debug.create.html.executor": "Debug",
     "JavaScript Debug.index.html.executor": "Run",
     "Node.js.read.js.executor": "Debug",
@@ -75,7 +82,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Ampsoft/phonebook-app",
+    "last_opened_file_path": "C:/Users/Lucas Sigoli/Documents/Lucas'Personal/Graduacao/Periodo6/configurando-correto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,6 +90,7 @@
     "nodejs_interpreter_path": "C:/Program Files/nodejs/npm",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
+    "onboarding.tips.debug.path": "C:/Users/Lucas Sigoli/Documents/Lucas'Personal/Graduacao/Periodo6/configurando-correto/teste/src/main/java/org/example/Main.java",
     "org.rust.first.attach.projects": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -103,6 +111,46 @@
       <recent name="C:\Users\Ampsoft\phonebook-app" />
       <recent name="C:\Users\Ampsoft\phonebook-app\public" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AddPhoneNumberTest.shouldAcceptNamesWithAbbreviations">
+    <configuration name="AddPhoneNumberTest.shouldAcceptNamesWithAbbreviations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teste" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teste.pages" />
+      <option name="MAIN_CLASS_NAME" value="teste.pages.AddPhoneNumberTest" />
+      <option name="METHOD_NAME" value="shouldAcceptNamesWithAbbreviations" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teste" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teste.pages" />
+      <option name="MAIN_CLASS_NAME" value="teste.pages.AddPhoneNumberTest" />
+      <option name="METHOD_NAME" value="shouldAddContactIfPhoneNumberAndNameAreValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AddPhoneNumberTest.shouldAcceptNamesWithAbbreviations" />
+        <item itemvalue="JUnit.AddPhoneNumberTest.shouldAddContactIfPhoneNumberAndNameAreValid" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$PROJECT_DIR$/../.cargo/bin" />
@@ -289,6 +337,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat: add server.js to project" />
     <MESSAGE value="feat: add index.html page" />
     <MESSAGE value="feat: add create.html page" />
@@ -304,65 +353,6 @@
     <MESSAGE value="config: workspace configurations" />
     <MESSAGE value="config: ignore localStorage from git" />
     <option name="LAST_COMMIT_MESSAGE" value="config: ignore localStorage from git" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <line>5</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <line>7</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <line>10</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <line>13</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <line>21</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/create.js</url>
-          <line>24</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/read.js</url>
-          <line>97</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/read.js</url>
-          <line>102</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
